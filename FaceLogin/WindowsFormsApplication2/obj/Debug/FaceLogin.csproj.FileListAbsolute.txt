@@ -1,0 +1,11 @@
+C:\Users\Robert\Documents\Visual Studio 2015\Projects\FaceLogin\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe.config
+C:\Users\Robert\Documents\Visual Studio 2015\Projects\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
+C:\Users\Robert\Documents\Visual Studio 2015\Projects\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
+C:\Users\Robert\Documents\Visual Studio 2015\Projects\FaceLogin\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe
+C:\Users\Robert\Documents\Visual Studio 2015\Projects\FaceLogin\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.pdb
+C:\Users\Robert\Documents\Visual Studio 2015\Projects\FaceLogin\WindowsFormsApplication2\bin\Debug\Facebook.dll
+C:\Users\Robert\Documents\Visual Studio 2015\Projects\FaceLogin\WindowsFormsApplication2\bin\Debug\Facebook.xml
+C:\Users\Robert\Documents\Visual Studio 2015\Projects\FaceLogin\WindowsFormsApplication2\obj\Debug\FaceLogin.csprojResolveAssemblyReference.cache
+C:\Users\Robert\Documents\Visual Studio 2015\Projects\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Form1.resources
+C:\Users\Robert\Documents\Visual Studio 2015\Projects\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Properties.Resources.resources
+C:\Users\Robert\Documents\Visual Studio 2015\Projects\FaceLogin\WindowsFormsApplication2\obj\Debug\FaceLogin.csproj.GenerateResource.Cache
