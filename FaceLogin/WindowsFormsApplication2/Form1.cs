@@ -2,41 +2,174 @@
 using System.Windows.Forms;
 using Facebook;
 using System.Dynamic;
+using System.Net;
 
 namespace WindowsFormsApplication2
 {
     public partial class Form1 : Form
     {
+        
+        //String accessToken = "804819252966453|Nd5XlC9HHG0xbJ6CgSmfGYcutaM";
+        #region Private Vars
+        private string p_appID = "804819252966453";
+        private string p_scopes = "user_about_me, publish_actions, public_profile";
+        private string p_access_token;
+        private DateTime p_token_expires;
+        private string p_granted_scopes;
+        private string p_denied_scopes;
+        private string p_error;
+        private string p_error_reason;
+        private string p_error_description;
+        private DialogResult result = DialogResult.Cancel;
+        #endregion
+
+        #region Public properties
+        public string access_token { get { return p_access_token; } }
+        public DateTime token_expires { get { return p_token_expires; } }
+        public string granted_scopes { get { return p_granted_scopes; } }
+        public string denied_scopes { get { return p_denied_scopes; } }
+        public string error { get { return p_error; } }
+        public string error_reason { get { return p_error_reason; } }
+        public string error_description { get { return p_error_description; } }
+        #endregion
         public Form1()
         {
             InitializeComponent();
+            //Login();
+
         }
-        private const string appId = "804819252966453";
-        private Uri _loginUrl;
-        private const string _ExtendedPermissions = "user_about_me, publish_actions";
-        FacebookClient fbcliente = new FacebookClient();
+        /*    private const string appId = "804819252966453";
+            private Uri _loginUrl;
+            private const string _ExtendedPermissions = "user_about_me, publish_actions, public_profile";
+            FacebookClient fb = new FacebookClient();*/
 
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dynamic parameters = new ExpandoObject();
-            parameters.client_id = appId;
-            parameters.redirect_uri = "https://www.facebook.com/connect/login_success.html";
-            //parameters.redirect_url = "https://www.facebook.com/connect/login_success.html";
-            parameters.response_type = "token";
-            parameters.display = "popup";
+            string returnURL = WebUtility.UrlEncode("https://www.facebook.com/connect/login_success.html");
+            string scopes = WebUtility.UrlEncode(p_scopes);
+            wbFace.Url = new Uri(string.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&response_type=token%2Cgranted_scopes&scope={2}&display=popup", new object[] { p_appID, returnURL, scopes }));
+            wbFace.Navigated += FBwebBrowser_Navigated;
+        }
 
-            if (!string.IsNullOrWhiteSpace(_ExtendedPermissions))
+        void FBwebBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            // Set title
+            this.Text = wbFace.DocumentTitle;
+
+            // Check to see if we hit return url
+            if (wbFace.Url.AbsolutePath == "/connect/login_success.html")
             {
-                parameters.scope = _ExtendedPermissions;
+                // Check for error
+                if (wbFace.Url.Query.Contains("error"))
+                {
+                    // Error detected
+                    this.result = System.Windows.Forms.DialogResult.Abort;
+                    ExtractURLInfo("?", wbFace.Url.Query);
+                }
+                else
+                {
+                    this.result = System.Windows.Forms.DialogResult.OK;
+                    ExtractURLInfo("#", wbFace.Url.Fragment);
+                }
+                // Close the dialog
+                this.Close();
+            }
 
+        }
 
-                var fb = new FacebookClient();
-                _loginUrl = fb.GetLoginUrl(parameters);
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Return the dialog result
+            this.DialogResult = result;
+        }
 
-                wbFace.Navigate(_loginUrl.AbsoluteUri);
+        private void ExtractURLInfo(string inpTrimChar, string urlInfo)
+        {
+            string fragments = urlInfo.Trim(char.Parse(inpTrimChar)); // Trim the hash or the ? mark
+            string[] parameters = fragments.Split(char.Parse("&")); // Split the url fragments / query string 
+
+            // Extract info from url
+            foreach (string parameter in parameters)
+            {
+                string[] name_value = parameter.Split(char.Parse("=")); // Split the input
+
+                switch (name_value[0])
+                {
+                    case "access_token":
+                        this.p_access_token = name_value[1];
+                        break;
+                    case "expires_in":
+                        double expires = 0;
+                        if (double.TryParse(name_value[1], out expires))
+                        {
+                            this.p_token_expires = DateTime.Now.AddSeconds(expires);
+                        }
+                        else
+                        {
+                            this.p_token_expires = DateTime.Now;
+                        }
+                        break;
+                    case "granted_scopes":
+                        this.p_granted_scopes = WebUtility.UrlDecode(name_value[1]);
+                        break;
+                    case "denied_scopes":
+                        this.p_denied_scopes = WebUtility.UrlDecode(name_value[1]);
+                        break;
+                    case "error":
+                        this.p_error = WebUtility.UrlDecode(name_value[1]);
+                        break;
+                    case "error_reason":
+                        this.p_error_reason = WebUtility.UrlDecode(name_value[1]);
+                        break;
+                    case "error_description":
+                        this.p_error_description = WebUtility.UrlDecode(name_value[1]);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
+
+        /*private void Login()
+       {
+          dynamic parameters = new ExpandoObject();
+           parameters.client_id = appId;
+           parameters.redirect_uri = "https://www.facebook.com/connect/login_success.html";
+           parameters.response_type = "token";
+           parameters.display = "popup";
+
+
+
+           if (!string.IsNullOrWhiteSpace(_ExtendedPermissions))
+           {
+               parameters.scope = _ExtendedPermissions;
+
+
+               var fb = new FacebookClient();
+               _loginUrl = fb.GetLoginUrl(parameters);
+
+               wbFace.Navigate(_loginUrl.AbsoluteUri);
+
+           }
+
+           // //dynamic result = fb.Get("oauth/access_token", new
+           // //{
+           // //    client_id = "app_id",
+           // //    client_secret = "app_secret",
+           // //    grant_type = "client_credentials"
+           // //});
+           // //fb.AccessToken = result.access_token;
+
+           // var client = new FacebookClient(parameters);
+           // dynamic me = client.Get("me");
+           // string name = me.name;
+           // string mail = me.email;
+           // string gender = me.gender;
+           // tbnama.Text = name;
+           // //lblgender.Text = gender;
+           //// lblemail.Text = mail;
+       }*/
     }
 }
