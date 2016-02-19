@@ -14,24 +14,25 @@ namespace WindowsFormsApplication2
 {
     public partial class Logueado : Form
     {
-        
 
+        Form1 fbd = new Form1();
         public Logueado()
         {
             InitializeComponent();
-
+            btnpub.Visible = false;
+            mensaje.Visible = false;
 
         }
 
         private void Logueado_Load(object sender, EventArgs e)
         {
-
             
+
         }
 
         private void btnloguear_Click(object sender, EventArgs e)
         {
-            Form1 fbd = new Form1();
+            
 
             switch (fbd.ShowDialog(this))
             {
@@ -53,11 +54,19 @@ namespace WindowsFormsApplication2
                     lblname.Text = name;
                     lblgender.Text = gender;
                     lblemail.Text = mail;
-                   // pictureBox1.Image = pic;
+                    // pictureBox1.Image = pic;
+                    btnpub.Visible = true;
+                    mensaje.Visible = true;
                     break;
                 default:
                     break;
             }
+        }
+
+        private void btnpub_Click(object sender, EventArgs e)
+        {
+            var client = new FacebookClient(fbd.access_token);
+            client.Post("/me/feed", new { message = mensaje.Text });
         }
     }
 }

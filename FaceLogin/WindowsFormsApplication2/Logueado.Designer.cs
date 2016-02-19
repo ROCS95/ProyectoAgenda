@@ -33,6 +33,8 @@
             this.lblgender = new System.Windows.Forms.Label();
             this.btnloguear = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mensaje = new System.Windows.Forms.TextBox();
+            this.btnpub = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,11 +83,31 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // mensaje
+            // 
+            this.mensaje.Location = new System.Drawing.Point(303, 191);
+            this.mensaje.Multiline = true;
+            this.mensaje.Name = "mensaje";
+            this.mensaje.Size = new System.Drawing.Size(203, 73);
+            this.mensaje.TabIndex = 6;
+            // 
+            // btnpub
+            // 
+            this.btnpub.Location = new System.Drawing.Point(361, 288);
+            this.btnpub.Name = "btnpub";
+            this.btnpub.Size = new System.Drawing.Size(75, 23);
+            this.btnpub.TabIndex = 7;
+            this.btnpub.Text = "publicar";
+            this.btnpub.UseVisualStyleBackColor = true;
+            this.btnpub.Click += new System.EventHandler(this.btnpub_Click);
+            // 
             // Logueado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 413);
+            this.Controls.Add(this.btnpub);
+            this.Controls.Add(this.mensaje);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnloguear);
             this.Controls.Add(this.lblgender);
@@ -106,5 +128,7 @@
         private System.Windows.Forms.Label lblgender;
         private System.Windows.Forms.Button btnloguear;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox mensaje;
+        private System.Windows.Forms.Button btnpub;
     }
 }

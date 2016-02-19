@@ -8,7 +8,7 @@ namespace WindowsFormsApplication2
 {
     public partial class Form1 : Form
     {
-        
+
         //String accessToken = "804819252966453|Nd5XlC9HHG0xbJ6CgSmfGYcutaM";
         #region Private Vars
         private string p_appID = "804819252966453";
@@ -35,13 +35,9 @@ namespace WindowsFormsApplication2
         public Form1()
         {
             InitializeComponent();
-            //Login();
 
         }
-        /*    private const string appId = "804819252966453";
-            private Uri _loginUrl;
-            private const string _ExtendedPermissions = "user_about_me, publish_actions, public_profile";
-            FacebookClient fb = new FacebookClient();*/
+
 
 
 
@@ -132,44 +128,6 @@ namespace WindowsFormsApplication2
             }
         }
 
-        /*private void Login()
-       {
-          dynamic parameters = new ExpandoObject();
-           parameters.client_id = appId;
-           parameters.redirect_uri = "https://www.facebook.com/connect/login_success.html";
-           parameters.response_type = "token";
-           parameters.display = "popup";
 
-
-
-           if (!string.IsNullOrWhiteSpace(_ExtendedPermissions))
-           {
-               parameters.scope = _ExtendedPermissions;
-
-
-               var fb = new FacebookClient();
-               _loginUrl = fb.GetLoginUrl(parameters);
-
-               wbFace.Navigate(_loginUrl.AbsoluteUri);
-
-           }
-
-           // //dynamic result = fb.Get("oauth/access_token", new
-           // //{
-           // //    client_id = "app_id",
-           // //    client_secret = "app_secret",
-           // //    grant_type = "client_credentials"
-           // //});
-           // //fb.AccessToken = result.access_token;
-
-           // var client = new FacebookClient(parameters);
-           // dynamic me = client.Get("me");
-           // string name = me.name;
-           // string mail = me.email;
-           // string gender = me.gender;
-           // tbnama.Text = name;
-           // //lblgender.Text = gender;
-           //// lblemail.Text = mail;
-       }*/
     }
 }

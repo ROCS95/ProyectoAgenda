@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(526, 267);
             this.Controls.Add(this.wbgoogle);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.ResumeLayout(false);
 
         }
