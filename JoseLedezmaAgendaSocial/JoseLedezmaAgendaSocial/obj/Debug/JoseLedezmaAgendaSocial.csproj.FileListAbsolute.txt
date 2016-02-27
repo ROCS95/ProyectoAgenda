@@ -10,3 +10,9 @@ C:\Users\yessenia\Documents\Visual Studio 2015\Projects\JoseLedezmaAgendaSocial\
 C:\Users\yessenia\Desktop\ProyectoAgenda\JoseLedezmaAgendaSocial\JoseLedezmaAgendaSocial\bin\Debug\JoseLedezmaAgendaSocial.exe.config
 C:\Users\yessenia\Desktop\ProyectoAgenda\JoseLedezmaAgendaSocial\JoseLedezmaAgendaSocial\obj\Debug\JoseLedezmaAgendaSocial.exe
 C:\Users\yessenia\Desktop\ProyectoAgenda\JoseLedezmaAgendaSocial\JoseLedezmaAgendaSocial\obj\Debug\JoseLedezmaAgendaSocial.pdb
+C:\Users\yessenia\Desktop\ProyectoAgenda\JoseLedezmaAgendaSocial\JoseLedezmaAgendaSocial\bin\Debug\JoseLedezmaAgendaSocial.exe
+C:\Users\yessenia\Desktop\ProyectoAgenda\JoseLedezmaAgendaSocial\JoseLedezmaAgendaSocial\bin\Debug\JoseLedezmaAgendaSocial.pdb
+C:\Users\yessenia\Desktop\ProyectoAgenda\JoseLedezmaAgendaSocial\JoseLedezmaAgendaSocial\obj\Debug\JoseLedezmaAgendaSocial.csprojResolveAssemblyReference.cache
+C:\Users\yessenia\Desktop\ProyectoAgenda\JoseLedezmaAgendaSocial\JoseLedezmaAgendaSocial\obj\Debug\JoseLedezmaAgendaSocial.Agenda.resources
+C:\Users\yessenia\Desktop\ProyectoAgenda\JoseLedezmaAgendaSocial\JoseLedezmaAgendaSocial\obj\Debug\JoseLedezmaAgendaSocial.Properties.Resources.resources
+C:\Users\yessenia\Desktop\ProyectoAgenda\JoseLedezmaAgendaSocial\JoseLedezmaAgendaSocial\obj\Debug\JoseLedezmaAgendaSocial.csproj.GenerateResource.Cache

@@ -17,6 +17,7 @@ namespace JoseLedezmaAgendaSocial
         {
             InitializeComponent();
             label2.Visible = true;
+            numericUpDown1.Visible = false;
 
         }
 
@@ -26,7 +27,7 @@ namespace JoseLedezmaAgendaSocial
             textBox2.Visible = true;
             label1.Visible = true;
             btnAgreg.Visible = true;
-            
+            numericUpDown1.Visible = true;
             label3.Text = DateTime.Now.ToString();
         }
 
