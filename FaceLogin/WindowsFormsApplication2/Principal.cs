@@ -18,11 +18,10 @@ namespace WindowsFormsApplication2
         {
             InitializeComponent();
         }
-
+       public FacebookClient client;
         private void bttnFacebook_Click(object sender, EventArgs e)
         {
             Form1 fbd = new Form1();
-
             switch (fbd.ShowDialog(this))
             {
                 case DialogResult.Abort:    // There was an error
@@ -34,12 +33,12 @@ namespace WindowsFormsApplication2
                     break;
                 case DialogResult.OK:   // Logon successfull
                     MessageBox.Show("User login was successfull! See log window for more information!", "Successfull!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    var client = new FacebookClient(fbd.access_token);
+                    client = new FacebookClient(fbd.access_token);
                     dynamic me = client.Get("me");
                     string name = me.name;
                     string mail = me.email;
                     string gender = me.gender;
-                    Agenda ag = new Agenda(name,mail,gender);
+                    Agenda ag = new Agenda(name,mail,gender,fbd.access_token);
                     ag.Show();
                     this.Hide();
                     // Image pic = me.picture;
@@ -72,15 +71,6 @@ namespace WindowsFormsApplication2
                 ag.Show();
                 m.Hide();
             }
-        }
-
-        private void Principal_Load(object sender, EventArgs e)
-        {
-            //Esto es para cambiar la apariencia del formulario
-            //System.Drawing.Drawing2D.GraphicsPath objDraw = new
-            //System.Drawing.Drawing2D.GraphicsPath();
-            //objDraw.AddEllipse(0, 0, this.Width, this.Height);
-            //this.Region = new Region(objDraw);
         }
     }
 }

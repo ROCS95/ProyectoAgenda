@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAgreg = new System.Windows.Forms.Button();
@@ -42,22 +41,11 @@
             this.lblgender = new System.Windows.Forms.Label();
             this.lblname = new System.Windows.Forms.Label();
             this.lblemail = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBxMost)).BeginInit();
             this.SuspendLayout();
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(646, 128);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            24,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(48, 20);
-            this.numericUpDown1.TabIndex = 18;
             // 
             // label3
             // 
@@ -82,9 +70,9 @@
             // btnAgreg
             // 
             this.btnAgreg.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgreg.Location = new System.Drawing.Point(461, 303);
+            this.btnAgreg.Location = new System.Drawing.Point(455, 322);
             this.btnAgreg.Name = "btnAgreg";
-            this.btnAgreg.Size = new System.Drawing.Size(82, 41);
+            this.btnAgreg.Size = new System.Drawing.Size(82, 22);
             this.btnAgreg.TabIndex = 15;
             this.btnAgreg.Text = "Agregar";
             this.btnAgreg.UseVisualStyleBackColor = true;
@@ -191,15 +179,59 @@
             this.lblemail.TabIndex = 19;
             this.lblemail.Text = "label1";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(564, 322);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Publicar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.domainUpDown1.Items.Add("1 AM");
+            this.domainUpDown1.Items.Add("2 AM");
+            this.domainUpDown1.Items.Add("3 AM");
+            this.domainUpDown1.Items.Add("4 AM");
+            this.domainUpDown1.Items.Add("5 AM");
+            this.domainUpDown1.Items.Add("6 AM");
+            this.domainUpDown1.Items.Add("7 AM");
+            this.domainUpDown1.Items.Add("8 AM");
+            this.domainUpDown1.Items.Add("9 AM");
+            this.domainUpDown1.Items.Add("10 AM");
+            this.domainUpDown1.Items.Add("11 AM");
+            this.domainUpDown1.Items.Add("12 PM");
+            this.domainUpDown1.Items.Add("1 PM");
+            this.domainUpDown1.Items.Add("2 PM");
+            this.domainUpDown1.Items.Add("3 PM");
+            this.domainUpDown1.Items.Add("4 PM");
+            this.domainUpDown1.Items.Add("5 PM");
+            this.domainUpDown1.Items.Add("6 PM");
+            this.domainUpDown1.Items.Add("7 PM");
+            this.domainUpDown1.Items.Add("8 PM");
+            this.domainUpDown1.Items.Add("9 PM");
+            this.domainUpDown1.Items.Add("10 PM");
+            this.domainUpDown1.Items.Add("11 PM");
+            this.domainUpDown1.Items.Add("12 AM");
+            this.domainUpDown1.Location = new System.Drawing.Point(355, 324);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(68, 20);
+            this.domainUpDown1.TabIndex = 23;
+            // 
             // Agenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 411);
+            this.Controls.Add(this.domainUpDown1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblgender);
             this.Controls.Add(this.lblname);
             this.Controls.Add(this.lblemail);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAgreg);
@@ -211,7 +243,6 @@
             this.Name = "Agenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictBxMost)).EndInit();
             this.ResumeLayout(false);
@@ -220,8 +251,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAgreg;
@@ -235,5 +264,7 @@
         private System.Windows.Forms.Label lblgender;
         private System.Windows.Forms.Label lblname;
         private System.Windows.Forms.Label lblemail;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DomainUpDown domainUpDown1;
     }
 }
