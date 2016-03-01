@@ -43,6 +43,8 @@
             this.lblemail = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBxMost)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +72,7 @@
             // btnAgreg
             // 
             this.btnAgreg.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgreg.Location = new System.Drawing.Point(455, 322);
+            this.btnAgreg.Location = new System.Drawing.Point(557, 323);
             this.btnAgreg.Name = "btnAgreg";
             this.btnAgreg.Size = new System.Drawing.Size(82, 22);
             this.btnAgreg.TabIndex = 15;
@@ -182,7 +184,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(564, 322);
+            this.button1.Location = new System.Drawing.Point(765, 324);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 22;
@@ -222,11 +224,33 @@
             this.domainUpDown1.Size = new System.Drawing.Size(68, 20);
             this.domainUpDown1.TabIndex = 23;
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(658, 128);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(284, 169);
+            this.textBox3.TabIndex = 24;
+            this.textBox3.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(726, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(183, 22);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Actividades pendientes";
+            this.label4.Visible = false;
+            // 
             // Agenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 411);
+            this.ClientSize = new System.Drawing.Size(988, 411);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblgender);
@@ -266,5 +290,7 @@
         private System.Windows.Forms.Label lblemail;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label4;
     }
 }

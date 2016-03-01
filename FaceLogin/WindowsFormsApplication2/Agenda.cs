@@ -25,6 +25,8 @@ namespace WindowsFormsApplication2
             label2.Visible = true;
             button1.Visible = false;
             domainUpDown1.Visible = false;
+            label4.Visible = false;
+            textBox3.Visible = false;
             lblname.Text = name;
             lblgender.Text = gender;
             lblemail.Text = mail;
@@ -43,6 +45,8 @@ namespace WindowsFormsApplication2
             groupBox1.Show();
             textBox2.Visible = true;
             label1.Visible = true;
+            label4.Visible = true;
+            textBox3.Visible = true;
             button1.Visible = true;
             btnAgreg.Visible = true;
             domainUpDown1.Visible = true;
@@ -70,6 +74,14 @@ namespace WindowsFormsApplication2
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+            TextReader leerTxt;
+            leerTxt = new StreamReader("Actividades.txt");
+            textBox3.Text = leerTxt.ReadToEnd();
+            //string[] lines = System.IO.File.ReadAllLines("Actividades.txt");
+            //foreach (string line in lines)
+            //{
+            //    textBox3.Text = line;
+            //}
             textBox1.Text = monthCalendar1.SelectionStart.ToString("dd-MMMM-yyyy");
         }
 
@@ -77,7 +89,7 @@ namespace WindowsFormsApplication2
         {
             Principal fbd = new Principal();
             var client = new FacebookClient(this.access_token);
-            client.Post("/me/feed", new { message = textBox2.Text });
+            client.Post("/me/feed", new { message = "Proyecto Agenda"+textBox3.Text });
         }
     }
 }
