@@ -43,7 +43,7 @@ namespace WindowsFormsApplication2
 
         private void btnAgreg_Click(object sender, EventArgs e)
         {
-            FileStream txt = new FileStream("C://Users//yessenia//Documents//Visual Studio 2015//Projects//JoseLedezmaAgendaSocial//Actividades.txt", FileMode.Append, FileAccess.Write);
+            FileStream txt = new FileStream("Actividades.txt", FileMode.Append, FileAccess.Write);
             StreamWriter writer = new StreamWriter(txt);
             writer.WriteLine(textBox2.Text + " " + monthCalendar1.SelectionStart.ToString("dd-MMMM-yyyy"));
             writer.Close();

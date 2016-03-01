@@ -38,3 +38,8 @@ C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\obj\
 C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Newtonsoft.Json.dll
 C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Newtonsoft.Json.xml
 C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Auth.resources
+C:\Users\Robert\Desktop\progra III\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Robert\Desktop\progra III\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Robert\Desktop\progra III\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Agenda.resources
+C:\Users\Robert\Desktop\progra III\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Auth.resources
+C:\Users\Robert\Desktop\progra III\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Principal.resources
