@@ -99,7 +99,7 @@ namespace WindowsFormsApplication2
 
         public static Uri GetAutenticationURI(string clientId, string redirectUri)
         {
-            string scopes = "https://www.googleapis.com/auth/plus.login email";
+            string scopes = "https://www.googleapis.com/auth/plus.login email profile https://www.googleapis.com/auth/cloud-platform";
 
             if (string.IsNullOrEmpty(redirectUri))
             {  

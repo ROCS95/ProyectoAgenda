@@ -48,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(562, 358);
             this.Controls.Add(this.webBrowser1);
             this.Name = "Auth";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auth";
             this.ResumeLayout(false);
 
