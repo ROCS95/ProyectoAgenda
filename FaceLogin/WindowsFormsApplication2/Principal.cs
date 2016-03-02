@@ -26,13 +26,13 @@ namespace WindowsFormsApplication2
             {
                 case DialogResult.Abort:    // There was an error
                     // Get the error information
-                    MessageBox.Show("There was an error or the user denied access! See log window for more information!", "Error: An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There was an error or the user denied access!", "Error: An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case DialogResult.Cancel:   // User clicked cancel or closed the dialog
                     MessageBox.Show("The user clicked cancel or closed the dialog!", "Error: Interupted by user", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case DialogResult.OK:   // Logon successfull
-                    MessageBox.Show("User login was successfull! See log window for more information!", "Successfull!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("User login was successfull!", "Successfull!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     client = new FacebookClient(fbd.access_token);
                     dynamic me = client.Get("me");
                     string name = me.name;
