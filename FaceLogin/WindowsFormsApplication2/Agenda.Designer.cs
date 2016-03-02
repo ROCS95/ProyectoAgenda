@@ -250,7 +250,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 411);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(988, 426);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.domainUpDown1);
@@ -266,6 +267,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictBxMost);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.SystemColors.InfoText;
             this.Name = "Agenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda";

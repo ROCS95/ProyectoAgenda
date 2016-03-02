@@ -83,7 +83,11 @@ namespace WindowsFormsApplication2
             string[] lines = System.IO.File.ReadAllLines("Actividades.txt");
             foreach (string line in lines)
             {
-                txt += line + "\r\n";
+                string text = line;
+                string fecha = monthCalendar1.SelectionStart.ToString("dd-MMMM-yyyy"); ;
+                if (text.Contains(fecha)) {
+                    txt += text + "\r\n";
+                }
             }
             textBox3.Text = txt;
             textBox1.Text = monthCalendar1.SelectionStart.ToString("dd-MMMM-yyyy");
