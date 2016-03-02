@@ -32,11 +32,11 @@ namespace WindowsFormsApplication2
             {
                 webBrowser1.Visible = false;
                 // searching the body for our code
-                string AuthCode = webBrowser1.DocumentTitle.Replace("Success code=", "");
+                string AuthCode = webBrowser1.DocumentTitle.Replace("Success code=", "").Substring(0,10);
                 string webText = ((WebBrowser)sender).DocumentText;
-                int  start = webText.IndexOf("id=\"code\"");
-                start = webText.IndexOf(AuthCode, start);
-                int  end = webText.IndexOf('"', start);
+                int start = webText.IndexOf("id=\"code\"");
+                start = webText.IndexOf(AuthCode, 0);
+                int end = webText.IndexOf('"', start);
                 string authCode = webText.Substring(start, end - start);
                 //Exchange the code for Access token and refreshtoken.
                 access = AuthResponse.Exchange(authCode, clientId, clientSecret, redirectURI);
