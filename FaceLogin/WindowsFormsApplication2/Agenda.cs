@@ -70,21 +70,17 @@ namespace WindowsFormsApplication2
         {
             FileStream txt = new FileStream("Actividades.txt", FileMode.Append, FileAccess.Write);
             StreamWriter writer = new StreamWriter(txt);
-            writer.WriteLine(textBox2.Text + " " + monthCalendar1.SelectionStart.ToString("dd-MMMM-yyyy") + " " + domainUpDown1.SelectedItem.ToString());
+            writer.WriteLine(textBox2.Text + " " + monthCalendar1.SelectionStart.ToString("dd-MMMM-yyyy") + " " + domainUpDown1.SelectedItem.ToString() + "\n ");
             writer.Close();
             txt.Close();
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            //TextReader leerTxt;
-            //leerTxt = new StreamReader("Actividades.txt");
-            //textBox3.Text = leerTxt.ReadToEnd();
-            //leerTxt.Close();
             string[] lines = System.IO.File.ReadAllLines("Actividades.txt");
             foreach (string line in lines)
             {
-                textBox3.Text += line +"\n";
+                textBox3.Text += line + "\r\n";
             }
             textBox1.Text = monthCalendar1.SelectionStart.ToString("dd-MMMM-yyyy");
         }
@@ -93,7 +89,12 @@ namespace WindowsFormsApplication2
         {
             Principal fbd = new Principal();
             var client = new FacebookClient(this.access_token);
-            client.Post("/me/feed", new { message = "Proyecto Agenda"+textBox3.Text });
+            client.Post("/me/feed", new { message = "Proyecto Agenda" + textBox3.Text });
+        }
+
+        private void Agenda_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }
