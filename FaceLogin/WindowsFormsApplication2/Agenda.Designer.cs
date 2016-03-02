@@ -226,6 +226,8 @@
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(658, 128);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";

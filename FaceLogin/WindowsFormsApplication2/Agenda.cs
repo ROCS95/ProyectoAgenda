@@ -61,6 +61,9 @@ namespace WindowsFormsApplication2
             btnAgreg.Visible = false;
             button1.Visible = false;
             domainUpDown1.Visible = false;
+            textBox3.Visible = false;
+            button1.Visible = false;
+            label4.Visible = false;
         }
 
         private void btnAgreg_Click(object sender, EventArgs e)
@@ -74,14 +77,15 @@ namespace WindowsFormsApplication2
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            TextReader leerTxt;
-            leerTxt = new StreamReader("Actividades.txt");
-            textBox3.Text = leerTxt.ReadToEnd();
-            //string[] lines = System.IO.File.ReadAllLines("Actividades.txt");
-            //foreach (string line in lines)
-            //{
-            //    textBox3.Text = line;
-            //}
+            //TextReader leerTxt;
+            //leerTxt = new StreamReader("Actividades.txt");
+            //textBox3.Text = leerTxt.ReadToEnd();
+            //leerTxt.Close();
+            string[] lines = System.IO.File.ReadAllLines("Actividades.txt");
+            foreach (string line in lines)
+            {
+                textBox3.Text += line +"\n";
+            }
             textBox1.Text = monthCalendar1.SelectionStart.ToString("dd-MMMM-yyyy");
         }
 
