@@ -39,8 +39,12 @@ namespace WindowsFormsApplication2
                     string mail = me.email;
                     string gender = me.gender;
                     Agenda ag = new Agenda(name,mail,gender,fbd.access_token);
-                    ag.Show();
+                    ag.Show(this);
                     this.Hide();
+                    if (true)
+                    {
+
+                    }
                     // Image pic = me.picture;
                     // pictureBox1.Image = pic;
                     break;
