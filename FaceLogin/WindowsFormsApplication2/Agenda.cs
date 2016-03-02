@@ -78,13 +78,14 @@ namespace WindowsFormsApplication2
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+            string txt = "";
+
             string[] lines = System.IO.File.ReadAllLines("Actividades.txt");
             foreach (string line in lines)
             {
-                
-                    textBox3.Text += line + "\r\n";
-                              
+                txt += line + "\r\n";
             }
+            textBox3.Text = txt;
             textBox1.Text = monthCalendar1.SelectionStart.ToString("dd-MMMM-yyyy");
         }
 
