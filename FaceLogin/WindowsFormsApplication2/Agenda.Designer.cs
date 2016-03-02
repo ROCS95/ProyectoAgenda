@@ -37,7 +37,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDown = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.pictBxMost = new System.Windows.Forms.PictureBox();
             this.lblgender = new System.Windows.Forms.Label();
             this.lblname = new System.Windows.Forms.Label();
             this.lblemail = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictBxMost = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBxMost)).BeginInit();
             this.SuspendLayout();
@@ -139,17 +139,6 @@
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
-            // 
-            // pictBxMost
-            // 
-            this.pictBxMost.Image = global::WindowsFormsApplication2.Properties.Resources.calendario;
-            this.pictBxMost.Location = new System.Drawing.Point(282, 92);
-            this.pictBxMost.Name = "pictBxMost";
-            this.pictBxMost.Size = new System.Drawing.Size(35, 30);
-            this.pictBxMost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictBxMost.TabIndex = 11;
-            this.pictBxMost.TabStop = false;
-            this.pictBxMost.Click += new System.EventHandler(this.pictBxMost_Click);
             // 
             // lblgender
             // 
@@ -246,6 +235,17 @@
             this.label4.Text = "Actividades pendientes";
             this.label4.Visible = false;
             // 
+            // pictBxMost
+            // 
+            this.pictBxMost.Image = global::WindowsFormsApplication2.Properties.Resources.calendario;
+            this.pictBxMost.Location = new System.Drawing.Point(282, 92);
+            this.pictBxMost.Name = "pictBxMost";
+            this.pictBxMost.Size = new System.Drawing.Size(35, 30);
+            this.pictBxMost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictBxMost.TabIndex = 11;
+            this.pictBxMost.TabStop = false;
+            this.pictBxMost.Click += new System.EventHandler(this.pictBxMost_Click);
+            // 
             // Agenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,6 +268,7 @@
             this.Controls.Add(this.pictBxMost);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Agenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda";
