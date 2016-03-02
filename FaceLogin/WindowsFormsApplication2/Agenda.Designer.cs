@@ -269,7 +269,6 @@
             this.Name = "Agenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Agenda_FormClosing);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictBxMost)).EndInit();
             this.ResumeLayout(false);
