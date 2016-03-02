@@ -95,5 +95,10 @@ namespace WindowsFormsApplication2
             var client = new FacebookClient(this.access_token);
             client.Post("/me/feed", new { message = "Proyecto Agenda"+textBox3.Text });
         }
+
+        private void Agenda_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
     }
 }

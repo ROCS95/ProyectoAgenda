@@ -41,10 +41,7 @@ namespace WindowsFormsApplication2
                     Agenda ag = new Agenda(name,mail,gender,fbd.access_token);
                     ag.Show(this);
                     this.Hide();
-                    if (true)
-                    {
-
-                    }
+                    
                     // Image pic = me.picture;
                     // pictureBox1.Image = pic;
                     break;
