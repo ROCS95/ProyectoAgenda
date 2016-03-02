@@ -38,6 +38,15 @@ namespace WindowsFormsApplication2
             this.access = access;
             this.refresh = refresh;
             this.expiracion = expiracion;
+            InitializeComponent();
+            label2.Visible = true;
+            button1.Visible = false;
+            domainUpDown1.Visible = false;
+            label4.Visible = false;
+            textBox3.Visible = false;
+           // lblname.Text = name;
+           // lblgender.Text = gender;
+           // lblemail.Text = mail;
         }
 
         private void pictBxMost_Click(object sender, EventArgs e)

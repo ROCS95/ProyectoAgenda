@@ -50,6 +50,7 @@
             this.Name = "Auth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auth";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Auth_FormClosed);
             this.ResumeLayout(false);
 
         }

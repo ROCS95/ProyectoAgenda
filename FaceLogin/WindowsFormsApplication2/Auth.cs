@@ -19,6 +19,8 @@ namespace WindowsFormsApplication2
 
         public AuthResponse access;
 
+        private DialogResult result = DialogResult.Cancel;
+
         public Auth()
         {
             InitializeComponent();
@@ -41,15 +43,23 @@ namespace WindowsFormsApplication2
                 //Exchange the code for Access token and refreshtoken.
                 access = AuthResponse.Exchange(authCode, clientId, clientSecret, redirectURI);
                 processAccess();
+                //this.result = System.Windows.Forms.DialogResult.OK;
+                //this.Close();
             }
         }
         public void processAccess()
         {
             if (access.Access_token != null)
             {
-                this.DialogResult = DialogResult.OK;
+                this.result = System.Windows.Forms.DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void Auth_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Return the dialog result
+            this.DialogResult = result;
         }
     }
 }

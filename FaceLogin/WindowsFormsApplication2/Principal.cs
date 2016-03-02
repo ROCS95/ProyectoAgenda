@@ -53,24 +53,19 @@ namespace WindowsFormsApplication2
         private void bttnGoogle_Click(object sender, EventArgs e)
         {
             Auth m = new Auth();
-            var result = m.ShowDialog();
+            var result = m.ShowDialog(this);
             if (result == DialogResult.OK)
             {
                 string access = m.access.Access_token;
                 string refresh = m.access.refresh_token;
-               
-               
-                //AccessToken.Text = m.access.Access_token;
-                //refreshToken.Text = m.access.refresh_token;
 
                 if (DateTime.Now < m.access.created.AddHours(1))
                 {
                     expiracion = m.access.created.AddHours(1).Subtract(DateTime.Now).Minutes.ToString();
-                    // Expire.Text = m.access.created.AddHours(1).Subtract(DateTime.Now).Minutes.ToString();
                 }
                 Agenda ag = new Agenda(access, refresh, expiracion);
-                ag.Show();
-                m.Hide();
+                ag.Show(this);
+                this.Hide();
             }
         }
     }
