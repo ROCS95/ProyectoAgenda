@@ -30,7 +30,6 @@ C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\
 C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Facebook.xml
 C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\obj\Debug\FaceLogin.csprojResolveAssemblyReference.cache
 C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Form1.resources
-C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Logueado.resources
 C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Properties.Resources.resources
 C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\obj\Debug\FaceLogin.csproj.GenerateResource.Cache
 C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Principal.resources
@@ -77,3 +76,38 @@ C:\Users\Robert\Desktop\progra III\ProyectoAgenda\FaceLogin\WindowsFormsApplicat
 C:\Users\Robert\Desktop\progra III\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\Robert\Desktop\progra III\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\Robert\Desktop\progra III\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Zlib.Portable.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Auth.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Core.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Drive.v2.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\log4net.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Zlib.Portable.dll
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\BouncyCastle.Crypto.pdb
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.pdb
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Auth.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Auth.PlatformServices.pdb
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Auth.PlatformServices.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Core.pdb
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Core.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Drive.v2.pdb
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.Drive.v2.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.PlatformServices.pdb
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.Apis.PlatformServices.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\log4net.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Zlib.Portable.xml
+C:\Users\yessenia\Desktop\ProyectoAgenda\FaceLogin\WindowsFormsApplication2\bin\Debug\Google.GData.Client.dll

@@ -45,6 +45,9 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictBxMost = new System.Windows.Forms.PictureBox();
+            this.domainUpDown2 = new System.Windows.Forms.DomainUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBxMost)).BeginInit();
             this.SuspendLayout();
@@ -208,7 +211,7 @@
             this.domainUpDown1.Items.Add("10 PM");
             this.domainUpDown1.Items.Add("11 PM");
             this.domainUpDown1.Items.Add("12 AM");
-            this.domainUpDown1.Location = new System.Drawing.Point(355, 324);
+            this.domainUpDown1.Location = new System.Drawing.Point(461, 327);
             this.domainUpDown1.Name = "domainUpDown1";
             this.domainUpDown1.Size = new System.Drawing.Size(68, 20);
             this.domainUpDown1.TabIndex = 23;
@@ -246,12 +249,67 @@
             this.pictBxMost.TabStop = false;
             this.pictBxMost.Click += new System.EventHandler(this.pictBxMost_Click);
             // 
+            // domainUpDown2
+            // 
+            this.domainUpDown2.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.domainUpDown2.Items.Add("1 AM");
+            this.domainUpDown2.Items.Add("2 AM");
+            this.domainUpDown2.Items.Add("3 AM");
+            this.domainUpDown2.Items.Add("4 AM");
+            this.domainUpDown2.Items.Add("5 AM");
+            this.domainUpDown2.Items.Add("6 AM");
+            this.domainUpDown2.Items.Add("7 AM");
+            this.domainUpDown2.Items.Add("8 AM");
+            this.domainUpDown2.Items.Add("9 AM");
+            this.domainUpDown2.Items.Add("10 AM");
+            this.domainUpDown2.Items.Add("11 AM");
+            this.domainUpDown2.Items.Add("12 PM");
+            this.domainUpDown2.Items.Add("1 PM");
+            this.domainUpDown2.Items.Add("2 PM");
+            this.domainUpDown2.Items.Add("3 PM");
+            this.domainUpDown2.Items.Add("4 PM");
+            this.domainUpDown2.Items.Add("5 PM");
+            this.domainUpDown2.Items.Add("6 PM");
+            this.domainUpDown2.Items.Add("7 PM");
+            this.domainUpDown2.Items.Add("8 PM");
+            this.domainUpDown2.Items.Add("9 PM");
+            this.domainUpDown2.Items.Add("10 PM");
+            this.domainUpDown2.Items.Add("11 PM");
+            this.domainUpDown2.Items.Add("12 AM");
+            this.domainUpDown2.Location = new System.Drawing.Point(461, 364);
+            this.domainUpDown2.Name = "domainUpDown2";
+            this.domainUpDown2.Size = new System.Drawing.Size(68, 20);
+            this.domainUpDown2.TabIndex = 26;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(357, 326);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 18);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Hora de inicio:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(357, 364);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 18);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Hora de fin:";
+            // 
             // Agenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(988, 426);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.domainUpDown2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.domainUpDown1);
@@ -298,5 +356,8 @@
         private System.Windows.Forms.DomainUpDown domainUpDown1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DomainUpDown domainUpDown2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

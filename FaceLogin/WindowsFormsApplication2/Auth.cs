@@ -12,7 +12,6 @@ namespace WindowsFormsApplication2
 {
     public partial class Auth : Form
     {
-        //Vea mae estos datos son los de la doña del proyecto de la pagina
         public const string clientId = "697224350748-70gb6ot5p6ptlj248dnophhlqa0pq6ra.apps.googleusercontent.com";
         public const string clientSecret = "wGAX0o68kboMJD4p_5ypVs7o";      
         public const string redirectURI = "urn:ietf:wg:oauth:2.0:oob";

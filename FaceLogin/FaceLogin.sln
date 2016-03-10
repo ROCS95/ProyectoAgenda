@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceLogin", "WindowsFormsApplication2\FaceLogin.csproj", "{0CA869D0-C711-4849-8EE6-B95CB522EEEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoseYRoberthAgendaSocial", "WindowsFormsApplication2\JoseYRoberthAgendaSocial.csproj", "{0CA869D0-C711-4849-8EE6-B95CB522EEEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
