@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication2
+﻿namespace WindowsFormsApplication2.GUI
 {
     partial class Principal
     {
@@ -36,9 +36,9 @@
             // bttnFacebook
             // 
             this.bttnFacebook.Image = global::WindowsFormsApplication2.Properties.Resources.Facebook;
-            this.bttnFacebook.Location = new System.Drawing.Point(43, 153);
+            this.bttnFacebook.Location = new System.Drawing.Point(106, 152);
             this.bttnFacebook.Name = "bttnFacebook";
-            this.bttnFacebook.Size = new System.Drawing.Size(397, 39);
+            this.bttnFacebook.Size = new System.Drawing.Size(273, 39);
             this.bttnFacebook.TabIndex = 0;
             this.bttnFacebook.UseVisualStyleBackColor = true;
             this.bttnFacebook.Click += new System.EventHandler(this.bttnFacebook_Click);
@@ -46,9 +46,9 @@
             // bttnGoogle
             // 
             this.bttnGoogle.Image = global::WindowsFormsApplication2.Properties.Resources.Google;
-            this.bttnGoogle.Location = new System.Drawing.Point(43, 32);
+            this.bttnGoogle.Location = new System.Drawing.Point(154, 32);
             this.bttnGoogle.Name = "bttnGoogle";
-            this.bttnGoogle.Size = new System.Drawing.Size(397, 39);
+            this.bttnGoogle.Size = new System.Drawing.Size(189, 39);
             this.bttnGoogle.TabIndex = 1;
             this.bttnGoogle.UseVisualStyleBackColor = true;
             this.bttnGoogle.Click += new System.EventHandler(this.bttnGoogle_Click);
@@ -58,7 +58,7 @@
             this.buttonDB.Image = global::WindowsFormsApplication2.Properties.Resources.dropbox;
             this.buttonDB.Location = new System.Drawing.Point(140, 93);
             this.buttonDB.Name = "buttonDB";
-            this.buttonDB.Size = new System.Drawing.Size(214, 34);
+            this.buttonDB.Size = new System.Drawing.Size(213, 35);
             this.buttonDB.TabIndex = 2;
             this.buttonDB.UseVisualStyleBackColor = true;
             this.buttonDB.Click += new System.EventHandler(this.buttonDB_Click);

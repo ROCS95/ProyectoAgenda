@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication2
+﻿namespace WindowsFormsApplication2.GUI
 {
     partial class Auth
     {

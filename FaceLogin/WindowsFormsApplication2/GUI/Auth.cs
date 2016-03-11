@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication2.BO;
 
-namespace WindowsFormsApplication2
+namespace WindowsFormsApplication2.GUI
 {
     public partial class Auth : Form
     {
@@ -45,6 +46,9 @@ namespace WindowsFormsApplication2
        
             }
         }
+        /// <summary>
+        /// revisa que el Access_token no este vacio
+        /// </summary>
         public void processAccess()
         {
             if (access.Access_token != null)
@@ -56,7 +60,6 @@ namespace WindowsFormsApplication2
 
         private void Auth_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // Return the dialog result
             this.DialogResult = result;
         }
     }

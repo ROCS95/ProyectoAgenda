@@ -11,13 +11,17 @@ using Nemiro.OAuth;
 using Nemiro.OAuth.LoginForms;
 using System.IO;
 using System.Net;
+using WindowsFormsApplication2.Entidades;
 
-namespace WindowsFormsApplication2
+namespace WindowsFormsApplication2.GUI
 {
     public partial class FormBD : Form
     {
 
         private string CurrentPath = "/";
+        public int dropUser = 1;
+
+        public int FaceUser { get; internal set; }
 
         public FormBD()
         {
@@ -38,6 +42,11 @@ namespace WindowsFormsApplication2
        callback: CreateFolder_Result
      );
         }
+
+        /// <summary>
+        /// getea el resultado del login
+        /// </summary>
+        /// <param name="result"></param>
         private void GetFiles_Result(RequestResult result)
         {
             if (this.InvokeRequired)
@@ -69,38 +78,7 @@ namespace WindowsFormsApplication2
                 MessageBox.Show("Error...");
             }
         }
-        private void listBox1_DoubleClick(object sender, EventArgs e)
-        {
-            if (listBox1.SelectedItem == null) { return; }
-            UniValue file = (UniValue)listBox1.SelectedItem;
-
-            if (file["path"] == "..")
-            {
-                if (this.CurrentPath != "/")
-                {
-                    this.CurrentPath = Path.GetDirectoryName(this.CurrentPath).Replace("\\", "/");
-                }
-            }
-            else
-            {
-                if (file["is_dir"] == 1)
-                {
-                    this.CurrentPath = file["path"].ToString();
-                }
-                else
-                {
-                    saveFileDialog1.FileName = Path.GetFileName(file["path"].ToString());
-                    if (saveFileDialog1.ShowDialog() != System.Windows.Forms.DialogResult.OK)
-                    {
-                        return;
-                    }
-                    var web = new WebClient();
-                    web.DownloadProgressChanged += DownloadProgressChanged;
-                    web.DownloadFileAsync(new Uri(String.Format("https://api-content.dropbox.com/1/files/auto{0}?access_token={1}", file["path"], Properties.Settings.Default.AccessToken)), saveFileDialog1.FileName);
-                }
-            }
-            this.GetFiles();
-        }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -120,6 +98,7 @@ namespace WindowsFormsApplication2
               callback: Upload_Result
             );
         }
+
         private void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             progressBar1.Value = e.ProgressPercentage;
@@ -176,18 +155,12 @@ namespace WindowsFormsApplication2
 
         private void FormBD_Load(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(Properties.Settings.Default.AccessToken))
-            {
                 this.GetAccessToken();
-            }
-            else
-            {
-                this.GetFiles();
-            }
+                
         }
         private void GetAccessToken()
         {
-          var  login = new DropboxLogin("86xcp10ky7215i0","9n9rm05mkzi0vya");
+          var  login = new DropboxLogin("xxo7ikdnxtj8wus", "0v4qx84v7ybx4x0");
             login.Owner = this;
             login.ShowDialog();
 
@@ -199,6 +172,9 @@ namespace WindowsFormsApplication2
             else
             {
                 MessageBox.Show("error...");
+                this.Close();
+                this.DialogResult = DialogResult.Abort;
+                
             }
         }
         private void GetFiles()
@@ -215,10 +191,82 @@ namespace WindowsFormsApplication2
          );
         }
 
+        public ApiDataMapping GetUserInfo(AccessToken accessToken = null)
+        {
+            accessToken = Properties.Settings.Default.AccessToken;
+
+            // execute the request
+            var result = OAuthUtility.Get("https://api.dropbox.com/1/account/info", accessToken: accessToken);
+
+            // field mapping
+            var map = new ApiDataMapping();
+            map.Add("uid", "UserId", typeof(string));
+            map.Add("display_name", "DisplayName");
+            map.Add("email", "Email");
+            
+            // parse the server response and returns the UserInfo instance
+            // return new UserInfo(result, map);
+            return map;
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
-            Agenda ag = new Agenda();
-            ag.Show(this);
+            if (FaceUser == 0)
+            {
+                var map = GetUserInfo();
+                User us = new User();
+                us.Email = "";
+                us.Name = map.ToString();
+                Agenda ag = new Agenda(us)
+                {
+                    DropUser = dropUser
+                };
+                ag.Show(this);
+                this.Hide();
+            }
+            else
+            {
+                this.Close();
+            }
+            
+        }
+
+        private void FormBD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
+        }
+
+        private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (listBox1.SelectedItem == null) { return; }
+            UniValue file = (UniValue)listBox1.SelectedItem;
+
+            if (file["path"] == "..")
+            {
+                if (this.CurrentPath != "/")
+                {
+                    this.CurrentPath = Path.GetDirectoryName(this.CurrentPath).Replace("\\", "/");
+                }
+            }
+            else
+            {
+                if (file["is_dir"] == 1)
+                {
+                    this.CurrentPath = file["path"].ToString();
+                }
+                else
+                {
+                    saveFileDialog1.FileName = Path.GetFileName(file["path"].ToString());
+                    if (saveFileDialog1.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                    {
+                        return;
+                    }
+                    var web = new WebClient();
+                    web.DownloadProgressChanged += DownloadProgressChanged;
+                    web.DownloadFileAsync(new Uri(String.Format("https://api-content.dropbox.com/1/files/auto{0}?access_token={1}", file["path"], Properties.Settings.Default.AccessToken)), saveFileDialog1.FileName);
+                }
+            }
+            this.GetFiles();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication2
+﻿namespace WindowsFormsApplication2.GUI
 {
     partial class FormBD
     {
@@ -83,6 +83,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(187, 160);
             this.listBox1.TabIndex = 5;
+            this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
             // 
             // button3
             // 
@@ -107,6 +108,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "FormBD";
             this.Text = "FormBD";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBD_FormClosed);
             this.Load += new System.EventHandler(this.FormBD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

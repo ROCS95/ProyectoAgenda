@@ -4,7 +4,7 @@ using Facebook;
 using System.Dynamic;
 using System.Net;
 
-namespace WindowsFormsApplication2
+namespace WindowsFormsApplication2.GUI
 {
     public partial class FormFB : Form
     {

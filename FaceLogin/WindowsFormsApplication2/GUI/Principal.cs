@@ -9,17 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication2.Entidades;
 
-namespace WindowsFormsApplication2
+namespace WindowsFormsApplication2.GUI
 {
     public partial class Principal : Form
-    { 
+    {
         public Principal()
         {
             InitializeComponent();
         }
         public FacebookClient client;
-  
+
         private void bttnFacebook_Click(object sender, EventArgs e)
         {
             FormFB fbd = new FormFB();
@@ -28,18 +29,25 @@ namespace WindowsFormsApplication2
                 case DialogResult.Abort:
                     MessageBox.Show("There was an error or the user denied access!", "Error: An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
-                case DialogResult.Cancel:  
+                case DialogResult.Cancel:
                     MessageBox.Show("The user clicked cancel or closed the dialog!", "Error: Interupted by user", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
-                case DialogResult.OK:   
+                case DialogResult.OK:
                     MessageBox.Show("User login was successfull!", "Successfull!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     client = new FacebookClient(fbd.access_token);
                     dynamic me = client.Get("me");
-                    string name = me.name;
-                    string mail = me.email;
-                    string gender = me.gender;
-                    Agenda ag = new Agenda(name,mail,gender,fbd.access_token);
+                    User us = new User();
+                    us.Name = me.name;
+                    us.Email = me.email;
+                    us.Gender = me.gender;
+                    int fbUser = 1;
+                    Agenda ag = new Agenda(us, fbd.access_token)
+                    {
+                        FacebookUser = fbUser
+                    };
+                    
                     ag.Show(this);
+                    
                     this.Hide();
                     break;
                 default:
@@ -53,7 +61,10 @@ namespace WindowsFormsApplication2
             var result = m.ShowDialog(this);
             if (result == DialogResult.OK)
             {
-                Agenda ag = new Agenda();
+                Agenda ag = new Agenda()
+                {
+                    GoogleUser = 1
+                };
                 ag.Show(this);
                 this.Hide();
             }
@@ -61,9 +72,10 @@ namespace WindowsFormsApplication2
 
         private void buttonDB_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormBD f = new FormBD();
             f.Show(this);
-            this.Hide();
+
         }
     }
 }

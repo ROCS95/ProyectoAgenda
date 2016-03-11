@@ -135,52 +135,53 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agenda.cs">
+    <Compile Include="Entidades\User.cs" />
+    <Compile Include="GUI\Agenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Agenda.Designer.cs">
+    <Compile Include="GUI\Agenda.Designer.cs">
       <DependentUpon>Agenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Auth.cs">
+    <Compile Include="GUI\Auth.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Auth.Designer.cs">
+    <Compile Include="GUI\Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
-    <Compile Include="AuthResponse.cs" />
-    <Compile Include="FormBD.cs">
+    <Compile Include="BO\AuthResponse.cs" />
+    <Compile Include="GUI\FormBD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBD.Designer.cs">
+    <Compile Include="GUI\FormBD.Designer.cs">
       <DependentUpon>FormBD.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFB.cs">
+    <Compile Include="GUI\FormFB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormFB.Designer.cs">
+    <Compile Include="GUI\FormFB.Designer.cs">
       <DependentUpon>FormFB.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal.cs">
+    <Compile Include="GUI\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.cs">
+    <Compile Include="GUI\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Agenda.resx">
+    <EmbeddedResource Include="GUI\Agenda.resx">
       <DependentUpon>Agenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Auth.resx">
+    <EmbeddedResource Include="GUI\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBD.resx">
+    <EmbeddedResource Include="GUI\FormBD.resx">
       <DependentUpon>FormBD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFB.resx">
+    <EmbeddedResource Include="GUI\FormFB.resx">
       <DependentUpon>FormFB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
+    <EmbeddedResource Include="GUI\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

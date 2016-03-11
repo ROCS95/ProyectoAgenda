@@ -5,11 +5,15 @@ using Newtonsoft.Json;
 using System.Net;
 using System.IO;
 
-namespace WindowsFormsApplication2
+namespace WindowsFormsApplication2.BO
 {
    public class AuthResponse
     {
         private string access_token;
+
+        /// <summary>
+        /// refesca el Access_token
+        /// </summary>
         public string Access_token
         {
             get
@@ -35,7 +39,7 @@ namespace WindowsFormsApplication2
         /// //  "{\n  \"access_token\" : \"ya29.kwFUj-la2lATSkrqFlJXBqQjCIZiTg51GYpKt8Me8AJO5JWf0Sx6-0ZWmTpxJjrBrxNS_JzVw969LA\",\n  \"token_type\" : \"Bearer\",\n  \"expires_in\" : 3600,\n  \"refresh_token\" : \"1/ejoPJIyBAhPHRXQ7pHLxJX2VfDBRz29hqS_i5DuC1cQ\"\n}"
         /// </summary>
         /// <param name="response"></param>
-        /// <returns></returns>
+        /// <returns>retorna una variable tipo AuthResponse</returns>
         public static AuthResponse get(string response)
         {
             AuthResponse result = JsonConvert.DeserializeObject<AuthResponse>(response);
@@ -43,7 +47,9 @@ namespace WindowsFormsApplication2
             return result;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void refresh()
         {
             var request = (HttpWebRequest)WebRequest.Create("https://accounts.google.com/o/oauth2/token");
@@ -66,7 +72,14 @@ namespace WindowsFormsApplication2
             this.created = DateTime.Now;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="authCode"></param>
+        /// <param name="clientid"></param>
+        /// <param name="secret"></param>
+        /// <param name="redirectURI"></param>
+        /// <returns></returns>
         public static AuthResponse Exchange(string authCode, string clientid, string secret, string redirectURI)
         {
 
@@ -96,7 +109,12 @@ namespace WindowsFormsApplication2
             return x;
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="clientId"></param>
+        /// <param name="redirectUri"></param>
+        /// <returns>retorna un uri</returns>
         public static Uri GetAutenticationURI(string clientId, string redirectUri)
         {
             string scopes = "https://www.googleapis.com/auth/plus.login email profile https://www.googleapis.com/auth/cloud-platform";
