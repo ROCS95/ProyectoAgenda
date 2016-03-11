@@ -30,12 +30,13 @@
         {
             this.bttnFacebook = new System.Windows.Forms.Button();
             this.bttnGoogle = new System.Windows.Forms.Button();
+            this.buttonDB = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bttnFacebook
             // 
             this.bttnFacebook.Image = global::WindowsFormsApplication2.Properties.Resources.Facebook;
-            this.bttnFacebook.Location = new System.Drawing.Point(43, 100);
+            this.bttnFacebook.Location = new System.Drawing.Point(43, 153);
             this.bttnFacebook.Name = "bttnFacebook";
             this.bttnFacebook.Size = new System.Drawing.Size(397, 39);
             this.bttnFacebook.TabIndex = 0;
@@ -52,12 +53,23 @@
             this.bttnGoogle.UseVisualStyleBackColor = true;
             this.bttnGoogle.Click += new System.EventHandler(this.bttnGoogle_Click);
             // 
+            // buttonDB
+            // 
+            this.buttonDB.Image = global::WindowsFormsApplication2.Properties.Resources.dropbox;
+            this.buttonDB.Location = new System.Drawing.Point(140, 93);
+            this.buttonDB.Name = "buttonDB";
+            this.buttonDB.Size = new System.Drawing.Size(214, 34);
+            this.buttonDB.TabIndex = 2;
+            this.buttonDB.UseVisualStyleBackColor = true;
+            this.buttonDB.Click += new System.EventHandler(this.buttonDB_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.fondoPrin;
-            this.ClientSize = new System.Drawing.Size(487, 187);
+            this.ClientSize = new System.Drawing.Size(495, 226);
+            this.Controls.Add(this.buttonDB);
             this.Controls.Add(this.bttnGoogle);
             this.Controls.Add(this.bttnFacebook);
             this.Name = "Principal";
@@ -71,5 +83,6 @@
 
         private System.Windows.Forms.Button bttnGoogle;
         private System.Windows.Forms.Button bttnFacebook;
+        private System.Windows.Forms.Button buttonDB;
     }
 }

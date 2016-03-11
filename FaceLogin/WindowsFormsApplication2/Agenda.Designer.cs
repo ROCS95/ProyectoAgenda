@@ -149,9 +149,8 @@
             this.lblgender.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblgender.Location = new System.Drawing.Point(250, 9);
             this.lblgender.Name = "lblgender";
-            this.lblgender.Size = new System.Drawing.Size(45, 18);
+            this.lblgender.Size = new System.Drawing.Size(0, 18);
             this.lblgender.TabIndex = 21;
-            this.lblgender.Text = "label3";
             // 
             // lblname
             // 
@@ -159,9 +158,8 @@
             this.lblname.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblname.Location = new System.Drawing.Point(12, 9);
             this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(45, 18);
+            this.lblname.Size = new System.Drawing.Size(0, 18);
             this.lblname.TabIndex = 20;
-            this.lblname.Text = "label2";
             // 
             // lblemail
             // 
@@ -169,9 +167,8 @@
             this.lblemail.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblemail.Location = new System.Drawing.Point(139, 9);
             this.lblemail.Name = "lblemail";
-            this.lblemail.Size = new System.Drawing.Size(45, 18);
+            this.lblemail.Size = new System.Drawing.Size(0, 18);
             this.lblemail.TabIndex = 19;
-            this.lblemail.Text = "label1";
             // 
             // button1
             // 

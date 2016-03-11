@@ -15,9 +15,7 @@ namespace WindowsFormsApplication2
     public partial class Agenda : Form
     {
         private string access_token;
-        private string access;
-        private string refresh;
-        private string expiracion;
+     
 
         public Agenda(string name, string gender, string mail, string access_token)
         {
@@ -36,12 +34,8 @@ namespace WindowsFormsApplication2
             this.access_token = access_token;
         }
 
-        public Agenda(string name, string access, string expiracion)
+        public Agenda()
         {
-         
-            this.access = access;
-        //    this.refresh = refresh;
-            this.expiracion = expiracion;
             InitializeComponent();
             label2.Visible = true;
             button1.Visible = false;
@@ -51,10 +45,9 @@ namespace WindowsFormsApplication2
             domainUpDown2.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
-            lblname.Text = name;
-           // lblgender.Text = refresh;
-          // lblemail.Text = expiracion;
+            button1.Enabled = false;
         }
+
 
         private void pictBxMost_Click(object sender, EventArgs e)
         {

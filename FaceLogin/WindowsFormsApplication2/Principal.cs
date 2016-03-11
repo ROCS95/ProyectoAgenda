@@ -13,17 +13,16 @@ using System.Windows.Forms;
 namespace WindowsFormsApplication2
 {
     public partial class Principal : Form
-    {
-        string expiracion;
+    { 
         public Principal()
         {
             InitializeComponent();
         }
-       public FacebookClient client;
-       public Google.GData.Client.GDataCredentials client2;
+        public FacebookClient client;
+  
         private void bttnFacebook_Click(object sender, EventArgs e)
         {
-            Form1 fbd = new Form1();
+            FormFB fbd = new FormFB();
             switch (fbd.ShowDialog(this))
             {
                 case DialogResult.Abort:
@@ -36,20 +35,6 @@ namespace WindowsFormsApplication2
                     MessageBox.Show("User login was successfull!", "Successfull!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     client = new FacebookClient(fbd.access_token);
                     dynamic me = client.Get("me");
-            //        ubo.DatosFacebook(me);
-
-            //        public void DatosFacebook(dynamic datos) {
-            //Usuario u = new Usuario()
-            //{
-               
-            //    Name = datos.name
-
-
-
-
-            //};
-
-                        //}
                     string name = me.name;
                     string mail = me.email;
                     string gender = me.gender;
@@ -68,16 +53,17 @@ namespace WindowsFormsApplication2
             var result = m.ShowDialog(this);
             if (result == DialogResult.OK)
             {
-                string access = m.access.Access_token;
-                string refresh = m.access.refresh_token;
-                if (DateTime.Now < m.access.created.AddHours(1))
-                {
-                    expiracion = m.access.created.AddHours(1).Subtract(DateTime.Now).Minutes.ToString();
-                }
-                Agenda ag = new Agenda(access, refresh, expiracion);
+                Agenda ag = new Agenda();
                 ag.Show(this);
                 this.Hide();
             }
+        }
+
+        private void buttonDB_Click(object sender, EventArgs e)
+        {
+            FormBD f = new FormBD();
+            f.Show(this);
+            this.Hide();
         }
     }
 }

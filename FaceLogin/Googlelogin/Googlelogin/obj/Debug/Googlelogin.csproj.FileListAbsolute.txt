@@ -1,2 +1,0 @@
-c:\users\robert\documents\visual studio 2015\Projects\Googlelogin\Googlelogin\bin\Debug\Googlelogin.exe.config
-C:\Users\Robert\Desktop\progra III\ProyectoAgenda\Googlelogin\Googlelogin\bin\Debug\Googlelogin.exe.config

@@ -42,8 +42,7 @@ namespace WindowsFormsApplication2
                 //Exchange the code for Access token and refreshtoken.
                 access = AuthResponse.Exchange(authCode, clientId, clientSecret, redirectURI);
                 processAccess();
-                //this.result = System.Windows.Forms.DialogResult.OK;
-                //this.Close();
+       
             }
         }
         public void processAccess()

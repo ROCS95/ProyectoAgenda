@@ -95,6 +95,14 @@
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Nemiro.OAuth, Version=1.10.451.895, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nemiro.OAuth.1.10\lib\net451\Nemiro.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nemiro.OAuth.LoginForms, Version=1.4.451.1485, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nemiro.OAuth.LoginForms.1.4\lib\net452\Nemiro.OAuth.LoginForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -111,6 +119,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -139,11 +148,17 @@
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
     <Compile Include="AuthResponse.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormBD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormBD.Designer.cs">
+      <DependentUpon>FormBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFB.Designer.cs">
+      <DependentUpon>FormFB.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -159,8 +174,11 @@
     <EmbeddedResource Include="Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormBD.resx">
+      <DependentUpon>FormBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFB.resx">
+      <DependentUpon>FormFB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -222,6 +240,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tecnologia.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dropbox.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
