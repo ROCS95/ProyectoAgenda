@@ -38,6 +38,10 @@ namespace WindowsFormsApplication2
        callback: CreateFolder_Result
      );
         }
+        /// <summary>
+        /// getea el reultado del login
+        /// </summary>
+        /// <param name="result"></param>
         private void GetFiles_Result(RequestResult result)
         {
             if (this.InvokeRequired)
@@ -120,6 +124,7 @@ namespace WindowsFormsApplication2
               callback: Upload_Result
             );
         }
+
         private void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             progressBar1.Value = e.ProgressPercentage;
@@ -199,6 +204,8 @@ namespace WindowsFormsApplication2
             else
             {
                 MessageBox.Show("error...");
+                this.Close();
+                Owner.Show();
             }
         }
         private void GetFiles()

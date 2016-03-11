@@ -45,6 +45,9 @@ namespace WindowsFormsApplication2
        
             }
         }
+        /// <summary>
+        /// revisa que el Access_token no este vacio
+        /// </summary>
         public void processAccess()
         {
             if (access.Access_token != null)
@@ -56,7 +59,6 @@ namespace WindowsFormsApplication2
 
         private void Auth_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // Return the dialog result
             this.DialogResult = result;
         }
     }
