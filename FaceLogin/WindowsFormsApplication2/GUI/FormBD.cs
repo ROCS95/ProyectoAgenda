@@ -44,7 +44,7 @@ namespace WindowsFormsApplication2.GUI
         }
 
         /// <summary>
-        /// getea el resultado del login
+        /// getea el getea los files para llenae el listbox
         /// </summary>
         /// <param name="result"></param>
         private void GetFiles_Result(RequestResult result)
@@ -98,12 +98,20 @@ namespace WindowsFormsApplication2.GUI
               callback: Upload_Result
             );
         }
-
+        /// <summary>
+        /// muestra el progreso del download
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             progressBar1.Value = e.ProgressPercentage;
         }
 
+        /// <summary>
+        /// hace el uploud de los archivos
+        /// </summary>
+        /// <param name="result"></param>
         private void Upload_Result(RequestResult result)
         {
             if (this.InvokeRequired)
@@ -128,6 +136,11 @@ namespace WindowsFormsApplication2.GUI
                 }
             }
         }
+
+        /// <summary>
+        /// crea un folder
+        /// </summary>
+        /// <param name="result"></param>
         private void CreateFolder_Result(RequestResult result)
         {
             if (this.InvokeRequired)
@@ -156,8 +169,12 @@ namespace WindowsFormsApplication2.GUI
         private void FormBD_Load(object sender, EventArgs e)
         {
                 this.GetAccessToken();
+                this.GetFiles();
                 
         }
+        /// <summary>
+        /// getea el AccessToken de la aplicacion
+        /// </summary>
         private void GetAccessToken()
         {
           var  login = new DropboxLogin("xxo7ikdnxtj8wus", "0v4qx84v7ybx4x0");
@@ -177,6 +194,10 @@ namespace WindowsFormsApplication2.GUI
                 
             }
         }
+
+        /// <summary>
+        /// getea los files para el listbox
+        /// </summary>
         private void GetFiles()
         {
             OAuthUtility.GetAsync
@@ -190,7 +211,12 @@ namespace WindowsFormsApplication2.GUI
            callback: GetFiles_Result
          );
         }
-
+        /// <summary>
+        /// getea la info de user
+        /// no esta implementado
+        /// </summary>
+        /// <param name="accessToken"></param>
+        /// <returns></returns>
         public ApiDataMapping GetUserInfo(AccessToken accessToken = null)
         {
             accessToken = Properties.Settings.Default.AccessToken;

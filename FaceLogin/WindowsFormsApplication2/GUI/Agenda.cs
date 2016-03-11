@@ -68,7 +68,6 @@ namespace WindowsFormsApplication2.GUI
             label5.Visible = false;
             label6.Visible = false;
             lblname.Text = us.Name;
-            //lblgender.Text = us.Gender;
             lblemail.Text = us.Email;
         }
 

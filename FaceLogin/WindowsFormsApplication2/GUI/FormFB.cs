@@ -77,6 +77,11 @@ namespace WindowsFormsApplication2.GUI
             this.DialogResult = result;
         }
 
+        /// <summary>
+        /// metodo para extraer la informacion de la url
+        /// </summary>
+        /// <param name="inpTrimChar"></param>
+        /// <param name="urlInfo"></param>
         private void ExtractURLInfo(string inpTrimChar, string urlInfo)
         {
             string fragments = urlInfo.Trim(char.Parse(inpTrimChar)); // Trim the hash or the ? mark

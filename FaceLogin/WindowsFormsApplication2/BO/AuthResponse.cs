@@ -39,7 +39,7 @@ namespace WindowsFormsApplication2.BO
         /// //  "{\n  \"access_token\" : \"ya29.kwFUj-la2lATSkrqFlJXBqQjCIZiTg51GYpKt8Me8AJO5JWf0Sx6-0ZWmTpxJjrBrxNS_JzVw969LA\",\n  \"token_type\" : \"Bearer\",\n  \"expires_in\" : 3600,\n  \"refresh_token\" : \"1/ejoPJIyBAhPHRXQ7pHLxJX2VfDBRz29hqS_i5DuC1cQ\"\n}"
         /// </summary>
         /// <param name="response"></param>
-        /// <returns>retorna una variable tipo AuthResponse</returns>
+        /// <returns>retorna una variable tipo AuthResponse result</returns>
         public static AuthResponse get(string response)
         {
             AuthResponse result = JsonConvert.DeserializeObject<AuthResponse>(response);
@@ -48,7 +48,7 @@ namespace WindowsFormsApplication2.BO
         }
 
         /// <summary>
-        /// 
+        /// refresca el access_token
         /// </summary>
         public void refresh()
         {
@@ -73,7 +73,7 @@ namespace WindowsFormsApplication2.BO
         }
 
         /// <summary>
-        /// 
+        /// AuthResponse Exchange
         /// </summary>
         /// <param name="authCode"></param>
         /// <param name="clientid"></param>
@@ -110,7 +110,7 @@ namespace WindowsFormsApplication2.BO
 
         }
         /// <summary>
-        /// 
+        /// getea el AutenticationURI
         /// </summary>
         /// <param name="clientId"></param>
         /// <param name="redirectUri"></param>
