@@ -9,15 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication2.Entidades;
 
 namespace WindowsFormsApplication2
 {
     public partial class Agenda : Form
     {
         private string access_token;
-     
 
-        public Agenda(string name, string gender, string mail, string access_token)
+        public FacebookClient client;
+
+        public int DropUser { get; internal set; }
+        public int FacebookUser { get; internal set; }
+        public int GoogleUser { get; internal set; }
+
+        public Agenda(User us, string access_token)
         {
             InitializeComponent();
             label2.Visible = true;
@@ -28,9 +34,9 @@ namespace WindowsFormsApplication2
             domainUpDown2.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
-            lblname.Text = name;
-            lblgender.Text = gender;
-            lblemail.Text = mail;
+            lblname.Text = us.Name;
+            lblgender.Text = us.Gender;
+            lblemail.Text = us.Email;
             this.access_token = access_token;
         }
 
@@ -45,7 +51,7 @@ namespace WindowsFormsApplication2
             domainUpDown2.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
-            button1.Enabled = false;
+           // button1.Enabled = true;
         }
 
 
@@ -85,6 +91,10 @@ namespace WindowsFormsApplication2
         private void btnAgreg_Click(object sender, EventArgs e)
         {
             string carpeta = lblname.Text;
+            if (carpeta == "")
+            {
+                carpeta = "usuario";
+            }
             try
             {
                 if (!(Directory.Exists(carpeta)))
@@ -93,7 +103,7 @@ namespace WindowsFormsApplication2
                 }
                 if (Directory.Exists(carpeta))
                 {
-                    FileStream txt = new FileStream(carpeta+"/"+"Actividades.txt", FileMode.Append, FileAccess.Write);
+                    FileStream txt = new FileStream(carpeta+"//"+"Actividades.txt", FileMode.Append, FileAccess.Write);
                     StreamWriter writer = new StreamWriter(txt);
                     writer.WriteLine(textBox2.Text + " " + monthCalendar1.SelectionStart.ToString("dd-MMMM-yyyy") + " " + domainUpDown1.SelectedItem.ToString() + " " + domainUpDown2.SelectedItem.ToString());
                     MessageBox.Show("Actividad creada");
@@ -132,15 +142,68 @@ namespace WindowsFormsApplication2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Principal fbd = new Principal();
-            var client = new FacebookClient(this.access_token);
-            client.Post("/me/feed", new { message = "Proyecto Agenda"+textBox3.Text });
-            MessageBox.Show("Actividad publicada con exito");
+            if (FacebookUser == 1)
+            {
+                Principal fbd = new Principal();
+                var client = new FacebookClient(this.access_token);
+                client.Post("/me/feed", new { message = "Proyecto Agenda" + textBox3.Text });
+                MessageBox.Show("Actividad publicada con exito");
+            }
+            else
+            {
+                FormFB fbd = new FormFB();
+                switch (fbd.ShowDialog(this))
+                {
+                    case DialogResult.Abort:
+                        MessageBox.Show("There was an error or the user denied access!", "Error: An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    case DialogResult.Cancel:
+                        MessageBox.Show("The user clicked cancel or closed the dialog!", "Error: Interupted by user", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    case DialogResult.OK:
+                        MessageBox.Show("User login was successfull!", "Successfull!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        client = new FacebookClient(fbd.access_token);
+                        dynamic me = client.Get("me");
+                        User us = new User();
+                        us.Name = me.name;
+                        us.Gender = me.gender;
+                        us.Email = me.mail;
+                        if (GoogleUser == 0 && DropUser == 0)
+                        {
+                            lblname.Text = us.Name;
+                            lblgender.Text = us.Gender;
+                            lblemail.Text = us.Email;
+                        }
+                        this.access_token = fbd.access_token;
+                        FacebookUser = 1;
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         private void Agenda_FormClosed(object sender, FormClosedEventArgs e)
         {
             Owner.Show();
+        }
+
+        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Dropuser == 0)
+            {
+                FormBD fdb = new FormBD()
+                {
+                    FaceUser = FacebookUser
+                };
+                fdb.Show(this);
+                this.Hide();
+            }
+            else
+            {
+                this.Close();
+            }
+            
         }
     }
 }

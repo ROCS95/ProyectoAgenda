@@ -107,6 +107,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "FormBD";
             this.Text = "FormBD";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBD_FormClosed);
             this.Load += new System.EventHandler(this.FormBD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

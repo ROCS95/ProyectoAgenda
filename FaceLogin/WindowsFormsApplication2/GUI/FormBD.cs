@@ -18,6 +18,9 @@ namespace WindowsFormsApplication2
     {
 
         private string CurrentPath = "/";
+        public int dropUser = 1;
+
+        public int FaceUser { get; internal set; }
 
         public FormBD()
         {
@@ -181,18 +184,11 @@ namespace WindowsFormsApplication2
 
         private void FormBD_Load(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(Properties.Settings.Default.AccessToken))
-            {
                 this.GetAccessToken();
-            }
-            else
-            {
-                this.GetFiles();
-            }
         }
         private void GetAccessToken()
         {
-          var  login = new DropboxLogin("86xcp10ky7215i0","9n9rm05mkzi0vya");
+          var  login = new DropboxLogin("xxo7ikdnxtj8wus", "0v4qx84v7ybx4x0");
             login.Owner = this;
             login.ShowDialog();
 
@@ -205,7 +201,8 @@ namespace WindowsFormsApplication2
             {
                 MessageBox.Show("error...");
                 this.Close();
-                Owner.Show();
+                this.DialogResult = DialogResult.Abort;
+                
             }
         }
         private void GetFiles()
@@ -224,8 +221,25 @@ namespace WindowsFormsApplication2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Agenda ag = new Agenda();
-            ag.Show(this);
+            if (FaceUser == 0)
+            {
+                Agenda ag = new Agenda()
+                {
+                    DropUser = dropUser
+                };
+                ag.Show(this);
+                this.Hide();
+            }
+            else
+            {
+                this.Close();
+            }
+            
+        }
+
+        private void FormBD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
         }
     }
 }
