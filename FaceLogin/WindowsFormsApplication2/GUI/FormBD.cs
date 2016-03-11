@@ -205,7 +205,6 @@ namespace WindowsFormsApplication2.GUI
             map.Add("email", "Email");
             
             // parse the server response and returns the UserInfo instance
-            // return new UserInfo(result, map);
             return map;
         }
 
@@ -216,8 +215,8 @@ namespace WindowsFormsApplication2.GUI
                 var map = GetUserInfo();
                 User us = new User();
                 us.Email = "";
-                us.Name = map.ToString();
-                Agenda ag = new Agenda(us)
+                us.Name = "";
+                Agenda ag = new Agenda()
                 {
                     DropUser = dropUser
                 };

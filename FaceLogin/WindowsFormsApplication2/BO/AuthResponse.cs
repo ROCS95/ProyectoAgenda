@@ -43,7 +43,7 @@ namespace WindowsFormsApplication2.BO
         public static AuthResponse get(string response)
         {
             AuthResponse result = JsonConvert.DeserializeObject<AuthResponse>(response);
-            result.created = DateTime.Now;   // DateTime.Now.Add(new TimeSpan(-2, 0, 0)); //For testing force refresh.
+            result.created = DateTime.Now; 
             return result;
         }
 

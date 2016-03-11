@@ -12,11 +12,11 @@ using WindowsFormsApplication2.BO;
 namespace WindowsFormsApplication2.GUI
 {
     public partial class Auth : Form
-    {
+    {                                   
         public const string clientId = "697224350748-70gb6ot5p6ptlj248dnophhlqa0pq6ra.apps.googleusercontent.com";
         public const string clientSecret = "wGAX0o68kboMJD4p_5ypVs7o";      
         public const string redirectURI = "urn:ietf:wg:oauth:2.0:oob";
-
+      
         public AuthResponse access;
 
         private DialogResult result = DialogResult.Cancel;
@@ -34,13 +34,9 @@ namespace WindowsFormsApplication2.GUI
             {
                 webBrowser1.Visible = false;
                 // searching the body for our code
-                string AuthCode = webBrowser1.DocumentTitle.Replace("Success code=", "").Substring(0,10);
-                string webText = ((WebBrowser)sender).DocumentText;
-                int start = webText.IndexOf("id=\"code\"");
-                start = webText.IndexOf(AuthCode, 0);
-                int end = webText.IndexOf('"', start);
-                string authCode = webText.Substring(start, end - start);
-                //Exchange the code for Access token and refreshtoken.
+                string AuthCode = webBrowser1.DocumentTitle.Replace("Success code=", "").Split('&')[0];
+                string authCode = AuthCode; 
+                    //Exchange the code for Access token and refreshtoken.
                 access = AuthResponse.Exchange(authCode, clientId, clientSecret, redirectURI);
                 processAccess();
        
